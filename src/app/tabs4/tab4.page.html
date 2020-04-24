@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>
+      Estudiantes Inactivos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+      <div>
+        <ion-label  *ngFor="let student of students">
+          <div *ngIf="!student.active" style="padding: 1em; background-color: rosybrown;">
+            <strong> {{student.name}} </strong>
+            <h3>{{student.controlnumber}}</h3>
+          </div>
+          
+        </ion-label>
+      </div>
+</ion-content>
