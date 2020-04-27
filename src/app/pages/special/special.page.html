@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>
+      Detalle estudiante
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngFor="let student of students">
+    <ion-label>
+      <div >
+        <h3>Curp : {{student.curp}}</h3>
+        <h3>Edad: {{student.age}}</h3>
+      </div>
+      
+    </ion-label>
+  </div>
+</ion-content>

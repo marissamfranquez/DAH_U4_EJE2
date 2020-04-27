@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validator, Validators} from '@angular/forms';
 import { Estudiante } from '../models/estudiante';
 import {EstudianteService } from '../services/estudiante.service';
 
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -11,7 +12,6 @@ import {EstudianteService } from '../services/estudiante.service';
 })
 export class Tab1Page implements OnInit {
 
-  
   public myForm: FormGroup;
   public student: Estudiante;
 

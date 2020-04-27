@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EstudianteService } from '../services/estudiante.service';
 import { Estudiante } from '../models/estudiante';
+import {Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -11,7 +12,7 @@ export class Tab2Page {
 
   public students: Estudiante[];
 
-  constructor(public service: EstudianteService) {
+  constructor(public service: EstudianteService, private router: Router) {
     this.service.getStudents().subscribe(data => {
       this.students = data.map(e => {
         return{
@@ -20,6 +21,14 @@ export class Tab2Page {
         } as Estudiante;
       });
     });
+  }
+  view(ventana: any): void {
+    const extras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(ventana)
+      }
+    };
+    this.router.navigate(['/special'], extras);
   }
 
 }

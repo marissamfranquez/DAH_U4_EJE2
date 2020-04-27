@@ -9,11 +9,11 @@ export class EstudianteService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  createStudent(student: Estudiante){
+  createStudent(student: Estudiante) {
     return this.firestore.collection('estudiante').add(student);
   }
 
-  getStudents(){
+  getStudents() {
     return this.firestore.collection('estudiante').snapshotChanges();
   }
 }
