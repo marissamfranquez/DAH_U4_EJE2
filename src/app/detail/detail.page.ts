@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Estudiante} from '../models/estudiante';
+import {EstudianteService} from '../services/estudiante.service';
+import {ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-detail',
@@ -7,8 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailPage implements OnInit {
 
-  constructor() { }
+  student: Estudiante;
 
+  constructor(private service: EstudianteService,
+              private actroute: ActivatedRoute,
+              private router: Router,
+              private toast: ToastController) {
+    this.actroute.queryParams.subscribe(
+      params => {
+        if (params && params.special) {
+          this.student = JSON.parse(params.special) as Estudiante;
+          console.log(this.student);
+        }
+      }
+    );
+  }
   ngOnInit() {
   }
 

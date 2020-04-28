@@ -22,5 +22,18 @@ export class Tab2Page {
       });
     });
   }
+  update(student: Estudiante, active: boolean) {
+    student.active = active;
+    this.service.updateStudent(student, student.id);
+  }
+
+  detail(student: Estudiante) {
+    let navext: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(student)
+      }
+    };
+    this.router.navigate(['/detail'], navext);
+  }
 
 }
