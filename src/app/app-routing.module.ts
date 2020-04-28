@@ -7,9 +7,9 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'special',
-    loadChildren: () => import('./pages/special/special.module').then( m => m.SpecialPageModule)
-  }
+    path: 'detail',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
 ];
 @NgModule({
   imports: [

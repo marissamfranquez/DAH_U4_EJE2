@@ -22,13 +22,5 @@ export class Tab2Page {
       });
     });
   }
-  view(ventana: any): void {
-    const extras: NavigationExtras = {
-      queryParams: {
-        special: JSON.stringify(ventana)
-      }
-    };
-    this.router.navigate(['/special'], extras);
-  }
 
 }
